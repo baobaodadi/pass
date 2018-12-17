@@ -1,5 +1,10 @@
 # 总结
 ## ES5
+## JS APIs和JS语法的区别
+
+```
+api是什么？Application Programming Interface， 应用程序编程接口。就是说它能给你提供一些方法，使你的开发变得简洁。它并不是什么技术，说白了就是一种语言提供的默认的方法的集合。不如js数组的push方法，当你想往数组里添加元素的时候，不用循环来实现了，直接push就能把元素加进去了，这个push方法就是js提供给你的一个api。
+```
 ##### javascript有哪几种数据类型
 ```
 六种基本数据类型
@@ -15,12 +20,14 @@
 ## ES6
 在使用新的ES6技巧时千万不要做过了头，使你的代码比你或者你的其他队友聪明
 ##### 什么是Babel，什么是Shims/Polyfills
+
 Babel 是一个通用的多用途 JavaScript 编译器。通过 Babel 你可以使用（并创建）下一代的 JavaScript，以及下一代的 JavaScript 工具。
 
 Babel 把用最新标准编写的 JavaScript 代码向下编译成可以在今天随处可用的版本。 这一过程叫做“源码到源码”编译， 也被称为转换编译（transpiling，是一个自造合成词，即转换＋编译。以下也简称为转译）。
+https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/user-handbook.md
 
 Polyfill（代码填充，也可译作兼容性补丁） 的技术。 简单地说，polyfill 即是在当前运行环境中用来复制（意指模拟性的复制，而不是拷贝）尚不存在的原生 api 的代码。 能让你提前使用还不可用的 APIs
-##### 什么是块作用域:{},let和const区别
+##### 什么是块作用域:{}
 
 ```
 let
@@ -382,7 +389,8 @@ p{ font-size :10px; -webkit- transform:scale (0.8);} //0.8是缩放比例
 
 觉得本文对你有帮助？请分享给更多人
 
-
+46.CSS渐变效果实现
+background: linear-gradient(#ed6d06, transparent);
 ```
 
 ## 浏览器
