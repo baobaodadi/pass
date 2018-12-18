@@ -391,6 +391,7 @@ p{ font-size :10px; -webkit- transform:scale (0.8);} //0.8是缩放比例
 
 46.CSS渐变效果实现
 background: linear-gradient(#ed6d06, transparent);
+background: linear-gradient(rgba(0,0,0,0.32),transparent);
 ```
 
 ## 浏览器
