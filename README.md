@@ -596,7 +596,7 @@ webpack中的hash和chunkhash的区别？
 chunkhash跟文件内容有关   hash不同环境生成文件名不一样
 ```
 ##获取 JavaScript 异步函数返回值
-
+https://www.cnblogs.com/zichi/p/7757804.html
 ```
 ###### wrong action
 复制代码
