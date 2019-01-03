@@ -738,61 +738,11 @@ function doubleAfter1Sec(param) {
     setTimeout(() => resolve(param * 2), 1000)
   })
 }
-# 总结
-## ES5
-## JS APIs和JS语法的区别
+
 
 ```
 api是什么？Application Programming Interface， 应用程序编程接口。就是说它能给你提供一些方法，使你的开发变得简洁。它并不是什么技术，说白了就是一种语言提供的默认的方法的集合。不如js数组的push方法，当你想往数组里添加元素的时候，不用循环来实现了，直接push就能把元素加进去了，这个push方法就是js提供给你的一个api。
-```
-##### javascript有哪几种数据类型
-```
-六种基本数据类型
-* undefined
-* null
-* string
-* boolean
-* number
-* symbol(ES6)
-一种引用类型
-* Object
-```
-## ES6
-在使用新的ES6技巧时千万不要做过了头，使你的代码比你或者你的其他队友聪明
-##### 什么是Babel，什么是Shims/Polyfills
 
-Babel 是一个通用的多用途 JavaScript 编译器。通过 Babel 你可以使用（并创建）下一代的 JavaScript，以及下一代的 JavaScript 工具。
-
-Babel 把用最新标准编写的 JavaScript 代码向下编译成可以在今天随处可用的版本。 这一过程叫做“源码到源码”编译， 也被称为转换编译（transpiling，是一个自造合成词，即转换＋编译。以下也简称为转译）。
-https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/user-handbook.md
-
-Polyfill（代码填充，也可译作兼容性补丁） 的技术。 简单地说，polyfill 即是在当前运行环境中用来复制（意指模拟性的复制，而不是拷贝）尚不存在的原生 api 的代码。 能让你提前使用还不可用的 APIs
-##### 什么是块作用域:{}
-
-```
-let
-	{
-	console.log( a );	// undefined
-	console.log( b );	// ReferenceError!
-
-	var a;
-	let b;
-}
-const
-{
-	const a = [1,2,3];
-	a.push( 4 );
-	console.log( a );		// [1,2,3,4]
-
-	a = 42;					// TypeError!
-}
-```
-##### 词法作用域和动态作用域，this和=>
-
-```
-动态作用域不关心它本身是怎样在哪里声明的，只关心它在哪里调用的，动态作用域的域链基于调用栈，而不是代码中的嵌套关系。
-词法作用域关心的是函数在哪里声明的，动态作用域的概念和js中的this相同，this也关心函数在哪里调用的。
-```
 ## REACT
 
 ```
@@ -1483,5 +1433,58 @@ doubleAndAdd(1, 3).then(console.log) // 8
 ```
 ##瀑布流原理
 https://github.com/simmin/custom-components
-doubleAndAdd(1, 3).then(console.log) // 8
+
+##HTTP
+
+```
+网络传输流程
+1.根据域名通过HOST,DNS首先查找IP地址
+2.应用层：HTTP 客户端 服务器 ：生成HTTP请求报文
+3.传输层：TCP协议将HTTP请求报文分割，标记端口号
+4.网络层：IP协议添加MAC地址搜索对方地址
+5.链路层：网线传输
+HTTP协议特点
+1. 无状态：不保存之前请求和响应的信息
+2. 持久链接：TCP链接状态只需开启一次
+3. 并行：同时发送多个请求
+HTTP方法
+1. GET 获取资源
+2. POST 改变资源
+3. PUT 传输文件
+4. HEAD 获得报文首部
+5. OPTIONS 询问支持的方法
+5. DELETE 删除文件
+6. TRACE 追踪路径
+7. CONNECT 要求用隧道协议链接代理
+4.Cookie状态管理
+
+1. 客户端发请求给服务器
+2. 服务器生成Cookie来记住客户端信息，并添加Set-Cookies字段到响应报文
+3. 客户端收到响应报文在本地保存Cookie信息
+4. 客户端下次发送请求报文中会自动加上Cookie信息
+5. 服务器端收到Cookie信息后会对比之前保存的记录，得到之前的状态信息
+5.HTTP状态码
+
+不少返回的状态码和状况都是错误的，用户可能察觉不到，比如Web应用程序内部出错，也会返回200
+1XX：信息状态码：接受的请求正在处理
+
+2XX：成功状态码：请求正常处理完毕
+
+200：OK 请求已被正常处理
+204：No Content
+206: Partial Content 表示客户端进行了范围请求，服务器设置Content-Range字段包含指定范围内容
+3XX：重定向状态码：需要进行附加操作以完成请求
+301：Moved Permanently 永久重定向 保存书签是新的URI
+302：Found 临时重定向 保存书签是旧的URI
+303：See Other 临时重定向 告诉客户端应当以get方式请求资源
+304：Not Modified 表示客户端发送附带条件的请求时，服务器资源未改变，可以直接使用客户端未过期的缓存，不包含响应的主体部分，304随被划分到这里，但其实和重定向没有关系
+307：Temporary Redirect 临时重定向 禁止POST变为GET
+4XX：客户端错误状态码：服务器无法处理请求
+400:Bad Request 请求报文中存在语法错误
+401:Unauthorized 需要认证信息
+403:Forbidder 请求资源被服务器拒绝
+404:Not Found 未找到请求资源
+5XX: 服务器错误状态吗：服务器处理请求出错
+500：Internal Server Error 服务器端故障
+503: Service Unavailable 服务器暂时超负载或在进行维护
 ```
